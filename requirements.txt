@@ -1,0 +1,10 @@
+
+flask
+flask-cors
+streamlit
+pandas
+numpy
+scikit-learn==1.8.0
+joblib
+requests
+flwr
