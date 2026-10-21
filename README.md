@@ -54,7 +54,7 @@ federated-icu-risk-prediction/
 ### 1. Clone the repository
 
 ```bash
-git clone <https://github.com/tanushaKatakam/Federated-ICU-Patient-Risk-Prediction>
+git clone https://github.com/tanushaKatakam/Federated-ICU-Patient-Risk-Prediction
 cd federated-icu-risk-prediction
 ```
 
