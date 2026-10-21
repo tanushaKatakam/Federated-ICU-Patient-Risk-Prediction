@@ -129,19 +129,25 @@ This project is intended for educational and research purposes only. It is not a
 ## Dashboard Screenshots
 
 ### Monitoring Overview
+
 ![Monitoring Overview](screenshots/dashboard-overview.png)
 
 ### Patient Vital-Sign Charts
+
 ![Monitoring Charts](screenshots/monitoring-charts.png)
 
 ### Patient Records
+
 ![Patient Records](screenshots/patient-records.png)
 
 ### AI Risk Assessment — Input Form
+
 ![AI Risk Assessment Input](screenshots/risk-assessment01.png)
 
 ### AI Risk Assessment — Prediction Result
+
 ![AI Risk Assessment Result](screenshots/risk-assessment02.png)
 
 ### Federated Learning
+
 ![Federated Learning Dashboard](screenshots/federated-learning.png)

@@ -1,12 +1,8 @@
-
-########################################################################################
 import streamlit as st
 import pandas as pd
 from pathlib import Path
 
-# --------------------------------------------------
 # Page setup
-# --------------------------------------------------
 st.set_page_config(
     page_title="CarePulse | ICU Monitoring",
     page_icon="🏥",
@@ -14,9 +10,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# --------------------------------------------------
 # Styling
-# --------------------------------------------------
 st.markdown("""
 <style>
     .block-container {
@@ -48,9 +42,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# --------------------------------------------------
 # Dataset
-# --------------------------------------------------
 DATA_PATH = (
     Path(__file__).resolve().parent.parent
     / "data"
@@ -114,9 +106,7 @@ if missing:
     st.error(f"Required dataset columns are missing: {missing}")
     st.stop()
 
-# --------------------------------------------------
 # Shared helpers
-# --------------------------------------------------
 def risk_counts(data):
     risk = data["Risk Category"].astype(str).str.strip().str.lower()
     high = int((risk == "high risk").sum())
@@ -171,9 +161,7 @@ def show_patient_details(record):
 
     st.caption("Blood pressure values are in mmHg.")
 
-# --------------------------------------------------
 # Page 1: Monitoring overview
-# --------------------------------------------------
 
 if page == "Monitoring Overview":
 
@@ -362,9 +350,7 @@ if page == "Monitoring Overview":
             hide_index=True,
         )
 
-# --------------------------------------------------
 # Page 2: Patient records
-# --------------------------------------------------
 elif page == "Patient Records":
 
     st.subheader("Patient Record Explorer")
@@ -429,9 +415,7 @@ elif page == "Patient Records":
     )
 
 
-# --------------------------------------------------
 # Page 3: AI Risk Assessment
-# --------------------------------------------------
 elif page == "AI Risk Assessment":
 
     import requests
@@ -489,8 +473,6 @@ elif page == "AI Risk Assessment":
                 "and systolic BP must exceed diastolic BP for this demo."
             )
         else:
-            # Keep the feature order and derived-feature formulas
-            # consistent with the existing prediction pipeline.
             pulse_pressure = sbp - dbp
             bmi = weight / (height ** 2)
             derived_hrv = 0.100
@@ -550,10 +532,7 @@ elif page == "AI Risk Assessment":
                 )
                 st.caption(str(exc))
 
-
-# --------------------------------------------------
-# Page 3: Federated learning
-# --------------------------------------------------
+# Page 4: Federated learning
 elif page == "Federated Learning":
 
     st.subheader("Federated Learning")
